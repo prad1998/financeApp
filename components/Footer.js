@@ -1,25 +1,27 @@
 import { Dimensions, Pressable, StyleSheet, Text, View } from "react-native";
 import React from 'react';
+import { ScreenType } from "../constants/constants";
 
-export default function Footer() {
+const Footer = ({onExit}) => {
   return (
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
-        <Pressable style={styles.button}>
+        <Pressable style={styles.button} onPress={()=>onExit(ScreenType.Contact)}>
           <View >
             <Text style={styles.textColor}>Contact</Text>
           </View>
         </Pressable>
 
-        <Pressable style={styles.button}>
+        <Pressable style={styles.button} onPress={()=>onExit(ScreenType.About)}>
           <View >
             <Text style={styles.textColor}>About</Text>
           </View>
         </Pressable>
       </View>
-    </View>
+    </View> 
   );
 }
+export default Footer;
 
 const styles = StyleSheet.create({
   container: {

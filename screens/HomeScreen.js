@@ -1,12 +1,13 @@
 import { Dimensions, Pressable, ImageBackground, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { ScreenType } from "../constants/constants";
 
-const HomeScreen = () => {
+const HomeScreen = ({onExit}) => {
   return (
     
       <View style={styles.conatiner}>
         <ImageBackground source={require('../assets/mantwo.png')} style={styles.backgroundpic}>
-        <Pressable style={styles.buttonContainer}>
+        <Pressable style={styles.buttonContainer} onPress={()=>onExit(ScreenType.Login)}>
           <View style={styles.button}>
             <Text>Login</Text>
           </View>
