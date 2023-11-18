@@ -4,14 +4,19 @@ import { ScreenType } from "../constants/constants";
 
 const HomeScreen = ({onExit}) => {
   return (
-    
-      <View style={styles.conatiner}>
-        <ImageBackground source={require('../assets/mantwo.png')} style={styles.backgroundpic}>
-        <Pressable style={styles.buttonContainer} onPress={()=>onExit(ScreenType.Login)}>
+    <View style={styles.container}>
+      <ImageBackground source={require('../assets/mantwo.png')} style={styles.backgroundpic}>
+        <Pressable style={styles.buttonContainer} onPress={() => onExit(ScreenType.Login)}>
           <View style={styles.button}>
-            <Text>Login</Text>
+            <Text style={{fontSize: 15}}>LOGIN</Text>
           </View>
-        </Pressable> 
+        </Pressable>
+
+        <Pressable style={[styles.buttonContainer, styles.beneathButtonContainer]} onPress={() => onExit(ScreenType.Login)}> 
+          <View style={styles.button}>
+            <Text style={{fontSize: 15}}>GUEST</Text>
+          </View>
+        </Pressable>
       </ImageBackground>
     </View>
   );
@@ -19,38 +24,46 @@ const HomeScreen = ({onExit}) => {
 
 export default HomeScreen;
 
+const buttonCommon = {
+  width: Dimensions.get("window").width - 100,
+  height: 60,
+  marginVertical: 10,
+  borderRadius: 30,
+  backgroundColor: "#3AB4BA",
+  justifyContent: "center",
+  alignItems: "center",
+  elevation: 10,
+  shadowOffset: {width: 2, height: 10},
+  shadowColor: "red", 
+  shadowOpacity: 9.3, 
+  shadowRadius: 3,
+};
+
 const styles = StyleSheet.create({
-  conatiner: {
+  container: {
     flex: 1,
     alignItems: "center",
-  
   },
 
   buttonContainer: {
+    alignContent: "space-between",
     position: 'absolute',
-    bottom: 90, 
+    bottom: 140, 
     width: '100%',
     alignItems: 'center',
   },
 
+  beneathButtonContainer: {
+    bottom: 50,
+  },
+
   button: {
-    width: Dimensions.get("window").width - 100,
-    height: 60,
-    marginVertical: 10,
-    borderRadius: 30,
-    backgroundColor: "#20f54a",
-    justifyContent: "center",
-    alignItems: "center",
-    elevation: 10,
-    shadowOffset: {width: 2, height: 10},
-    shadowColor: "red", 
-    shadowOpacity: 9.3, 
-    shadowRadius: 3,
+    ...buttonCommon,
   }, 
 
   backgroundpic: {
     flex: 1,
-    resizeMode: 'cover', // or 'stretch' or 'contain'
+    resizeMode: 'cover',
     width: Dimensions.get("screen").width,
     justifyContent: 'center',
   },

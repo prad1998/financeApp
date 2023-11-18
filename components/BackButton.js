@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Button } from 'react-native'
 import React from 'react'
 import { ScreenType } from '../constants/constants'
 
+
 const BackButton = ({OnButtonClick}) => {
   return (
     <View style={styles.container}>

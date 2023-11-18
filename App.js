@@ -16,7 +16,7 @@ export default function App() {
   let content;
 
   if (screen === ScreenType.Login) {
-    content = <LoginScreen />;
+    content = <LoginScreen OnButtonClick ={(data) => setScreen(data)}/>;
   } else if (screen === ScreenType.About) {
     content = <AboutScreen />;
   } else if (screen === ScreenType.Contact) {
@@ -42,7 +42,6 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Header></Header>
-      <BackButton OnButtonClick ={(data) => setScreen(data)}/>
       {content}
       <Footer></Footer>
       <StatusBar style="auto" />
