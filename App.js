@@ -10,6 +10,7 @@ import AboutScreen from "./screens/AboutScreen";
 import ContactScreen from "./screens/ContactScreen";
 import UserScreen from "./screens/UserScreen";
 import BackButton from "./components/BackButton";
+import GuestScreen from "./screens/GuestScreen";
 
 export default function App() {
   const [screen, setScreen] = useState(ScreenType.home);
@@ -37,7 +38,9 @@ export default function App() {
     );
   } else if (screen === ScreenType.User) {
     content = <UserScreen />;
-  }
+  } else if (screen === ScreenType.Guest) {
+    content = <GuestScreen OnButtonClick ={(data) => setScreen(data)} />;
+  } 
 
   return (
     <View style={styles.container}>

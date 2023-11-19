@@ -12,7 +12,7 @@ const HomeScreen = ({onExit}) => {
           </View>
         </Pressable>
 
-        <Pressable style={[styles.buttonContainer, styles.beneathButtonContainer]} onPress={() => onExit(ScreenType.Login)}> 
+        <Pressable style={[styles.buttonContainer, styles.beneathButtonContainer]} onPress={() => onExit(ScreenType.Guest)}> 
           <View style={styles.button}>
             <Text style={{fontSize: 15}}>GUEST</Text>
           </View>

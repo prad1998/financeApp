@@ -4,4 +4,5 @@ export const ScreenType = {
   UserScreen: "USER",
   About: "ABOUT",
   Contact: "CONTACT",
+  Guest: "GUEST"
 };
